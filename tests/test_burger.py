@@ -1,4 +1,4 @@
-from praktikum.bun import Bun
+from unittest.mock import Mock
 from praktikum.burger import Burger
 
 
@@ -20,6 +20,6 @@ class TestBurger:
         Тест установки булочки.
         """
         burger = Burger()
-        burger.set_buns(Bun("black bun", 100))
-        assert burger.bun.get_name() == "black bun"
-        assert burger.bun.get_price() == 100
+        mock_bun = Mock()
+        burger.set_buns(mock_bun)
+        assert burger.bun == mock_bun
